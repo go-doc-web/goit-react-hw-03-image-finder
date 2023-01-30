@@ -4,7 +4,7 @@ const ImageGalleryItem = ({ webformatURL, largeImageURL }) => {
   return (
     <>
       <li className={css.gallery__item}>
-        <img src="" alt="" />
+        <img src="#" alt="" />
       </li>
     </>
   );

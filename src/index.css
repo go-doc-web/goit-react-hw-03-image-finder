@@ -18,3 +18,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.conteiner {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  max-width: 100%;
+}

@@ -4,11 +4,25 @@ import ImageGalleryItem from './ImageGalleryItem';
 
 import css from './image-galary.module.scss';
 
-const ImageGallery = ({ items }) => {
+const items = [
+  { id: Math.random(), a: Math.random() },
+  { id: Math.random(), a: Math.random() },
+  { id: Math.random(), a: Math.random() },
+  { id: Math.random(), a: Math.random() },
+  { id: Math.random(), a: Math.random() },
+  { id: Math.random(), a: Math.random() },
+  { id: Math.random(), a: Math.random() },
+];
+
+const ImageGallery = () => {
   const elements = items.map(({ id, item }) => (
     <ImageGalleryItem key={id} {...item} />
   ));
-  return <ul className={css.list}>{elements}</ul>;
+  return (
+    <div className="conteiner">
+      <ul className={css.list}>{elements}</ul>
+    </div>
+  );
 };
 
 export default ImageGallery;
