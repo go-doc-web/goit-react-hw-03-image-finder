@@ -1,10 +1,10 @@
 import css from './image-gallary-item.module.scss';
 
-const ImageGalleryItem = ({ webformatURL, largeImageURL }) => {
+const ImageGalleryItem = ({ webformatURL }) => {
   return (
     <>
       <li className={css.gallery__item}>
-        <img src="#" alt="" />
+        <img src={webformatURL} alt="" loading="lazy" />
       </li>
     </>
   );

@@ -13,10 +13,8 @@ class Searchbar extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { onSubmit } = this.props;
-    onSubmit(this.state.search);
-    this.setState({
-      search: '',
-    });
+    onSubmit({ ...this.state });
+    this.reset();
   };
 
   handleChange = ({ target }) => {
@@ -26,6 +24,12 @@ class Searchbar extends Component {
       [name]: value,
     });
   };
+
+  reset() {
+    this.setState({
+      search: '',
+    });
+  }
 
   render() {
     const { search } = this.state;
@@ -50,6 +54,7 @@ class Searchbar extends Component {
               placeholder="Search images and photos"
               name="search"
               value={search}
+              required
             />
           </form>
         </div>
@@ -59,3 +64,7 @@ class Searchbar extends Component {
 }
 
 export default Searchbar;
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

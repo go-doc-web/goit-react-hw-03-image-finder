@@ -1,22 +1,12 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import ImageGalleryItem from './ImageGalleryItem';
 
 import css from './image-galary.module.scss';
 
-const items = [
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-];
-
-const ImageGallery = () => {
-  const elements = items.map(({ id, item }) => (
-    <ImageGalleryItem key={id} {...item} />
+const ImageGallery = ({ items }) => {
+  const elements = items.map(item => (
+    <ImageGalleryItem key={item.id} {...item} />
   ));
   return (
     <div className="conteiner">
