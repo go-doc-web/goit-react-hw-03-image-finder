@@ -22,7 +22,7 @@ class Modal extends Component {
     }
   };
   render() {
-    const { children, close } = this.props;
+    const { children } = this.props;
     const { closeModal } = this;
     return createPortal(
       <div onClick={closeModal} className={css.overlay}>

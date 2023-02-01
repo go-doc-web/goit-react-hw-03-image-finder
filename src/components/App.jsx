@@ -10,21 +10,6 @@ import ModalDetalis from './ImageGallery/ModalDetalis';
 
 import { searchImages } from '../shared/servises/posts-api';
 
-const placeholder = [
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-  { id: Math.random(), a: Math.random() },
-];
-
 class App extends Component {
   state = {
     search: '',

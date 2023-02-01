@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import css from './modal-detalis.module.scss';
+// import css from './modal-detalis.module.scss';
 
 const ModalDetalis = ({ imageLarge }) => {
   return (
