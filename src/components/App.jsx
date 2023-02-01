@@ -80,6 +80,7 @@ class App extends Component {
 
           <ImageGallery items={items} showPost={showPost} />
           {loading && <Loader />}
+          {error && <p>{error}</p>}
           {Boolean(items.length) && (
             <Button onClick={LoadMore} text="Load more" type="button" />
           )}
