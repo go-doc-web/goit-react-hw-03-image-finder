@@ -6,6 +6,7 @@ import Searchbar from './Searchbar';
 import ImageGallery from './ImageGallery';
 import Button from './Button';
 import Modal from '../shared/Modal';
+import ModalDetalis from './ImageGallery/ModalDetalis';
 
 import { searchImages } from '../shared/servises/posts-api';
 
@@ -31,6 +32,8 @@ class App extends Component {
     loading: false,
     error: null,
     page: 1,
+    showModal: false,
+    imageLarge: null,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -66,24 +69,41 @@ class App extends Component {
     }));
   };
 
+  showPost = largeImageURL => {
+    console.log(largeImageURL);
+    this.setState({
+      imageLarge: largeImageURL,
+      showModal: true,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      showModal: false,
+      imageLarge: null,
+    });
+  };
+
   render() {
-    const { items, loading } = this.state;
-    const { LoadMore, imageSearch } = this;
+    const { items, loading, imageLarge, showModal } = this.state;
+    const { LoadMore, imageSearch, showPost, closeModal } = this;
 
     return (
       <>
         <div className="App">
           <Searchbar onSubmit={imageSearch} />
 
-          <ImageGallery items={items} />
+          <ImageGallery items={items} showPost={showPost} />
           {loading && <Loader />}
           {Boolean(items.length) && (
             <Button onClick={LoadMore} text="Load more" type="button" />
           )}
+          {showModal && (
+            <Modal close={closeModal}>
+              <ModalDetalis imageLarge={imageLarge} />
+            </Modal>
+          )}
         </div>
-        <Modal>
-          <div></div>
-        </Modal>
       </>
     );
   }

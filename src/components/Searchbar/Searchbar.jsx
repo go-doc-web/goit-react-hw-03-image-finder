@@ -3,7 +3,7 @@ import { CiSearch } from 'react-icons/ci';
 
 import { Component } from 'react';
 
-import css from './search-bar.module.css';
+import css from './search-bar.module.scss';
 
 class Searchbar extends Component {
   state = {
