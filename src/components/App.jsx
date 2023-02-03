@@ -70,7 +70,7 @@ class App extends Component {
   };
 
   render() {
-    const { items, loading, imageLarge, showModal } = this.state;
+    const { items, loading, imageLarge, showModal, error } = this.state;
     const { LoadMore, imageSearch, showPost, closeModal } = this;
 
     return (
