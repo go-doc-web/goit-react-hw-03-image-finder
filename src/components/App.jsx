@@ -45,7 +45,9 @@ class App extends Component {
   }
 
   imageSearch = ({ search }) => {
-    this.setState({ search: search, items: [], page: 1 });
+    if (this.state.search !== search) {
+      this.setState({ search: search, items: [], page: 1 });
+    }
   };
 
   LoadMore = () => {
